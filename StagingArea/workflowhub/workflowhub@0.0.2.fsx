@@ -44,7 +44,7 @@ Description: |
 MajorVersion: 0
 MinorVersion: 0
 PatchVersion: 2
-Publish: false
+Publish: true
 Authors:
   - FullName: Caroline Ott
     Email: caroline.ott@rptu.de
@@ -57,16 +57,18 @@ Tags:
   - Name: CWL
   - Name: data publication
 ReleaseNotes: |
-  - runs on ARCtrl 3.3.0
+  - runs on ARCtrl 3.3.1
   - a CWL input parameter that is optional or has a CWL default no longer needs a value in run.yml
   - value types are compared with CWLType.admits, so a File value is accepted for a File? input
   - a CWL default is type-checked when run.yml has no value or a null value for the parameter
   - an item whose crate references a file that is not in the ARC is not ready
   - the badge and the ARC-wide readiness case count no item as ready when the LICENSE file is missing or empty
+  - declares the CQC hook endpoint of the endpoint submission service
+CQCHookEndpoint: https://ess.nfdi4plants.org/api/v1/hooks/workflowhub
 ---
 *)"""
 
-#r "nuget: ARCtrl, 3.3.0"
+#r "nuget: ARCtrl, 3.3.1"
 #r "nuget: ARCExpect.Core, 7.0.0-alpha"
 
 open ARCtrl
